@@ -1,0 +1,12 @@
+---
+- name: Check is ssh is installed
+  shell: ssh -V
+  register: check_ssh_version
+
+- name: SSH version
+  set_fact:
+    fact_ssh_version: "{{ check_ssh_version.stderr_lines }}"
+
+- name: SSH version
+  debug:
+    msg: "{{ fact_ssh_version }}"

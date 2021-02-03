@@ -1,0 +1,4 @@
+---
+input_role_ssh_PasswordAuthentication: "no"
+input_role_ssh_Port: 22
+input_role_ssh_PermitRootLogin: "no"

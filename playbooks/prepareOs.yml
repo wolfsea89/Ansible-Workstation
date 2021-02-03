@@ -1,0 +1,65 @@
+---
+- name: Preparation of OS
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles: 
+    - role: Ansible.Role.PreparationOs
+
+
+    
+  # pre_tasks:
+  #   - name: "[Ubuntu] Install Python"
+  #     changed_when: false
+  #     raw: "apt install -y python python3 && sudo update-alternatives --install /usr/local/bin/python python /usr/bin/python3 10"
+  #     when: system.os_distribution == "Ubuntu"
+
+  #   - name: "[Centos] Install Python"
+  #     changed_when: false
+  #     raw: "yum install -y python2 python36 && sudo alternatives --install /usr/local/bin/python python /usr/bin/python3 10"
+  #     when: system.os_distribution == "CentOS" and system.os_version == "7"
+
+  # roles:
+  #   - role: Ansible.Role.VM.ConfigurationSSH
+  #     tags: [ssh]
+  #     vars:
+  #       os_distribution: "{{ system.os_distribution }}"
+
+  #   - role: Ansible.Role.VM.ConfigurationSudo
+  #     tags: [sudo]
+  #     vars:
+  #       os_distribution: "{{ system.os_distribution }}"
+
+  #   - role: Ansible.Role.VM.SetHostname
+  #     tags: [hostname]
+  #     vars:
+  #       inventory_fqdn: "{{ inventory_hostname }}.{{ all.domain }}"
+
+  #   - role: Ansible.Role.VM.GroupsManagement
+  #     tags: [groups]
+  #     vars:
+  #       groups_on_host: "{{ system.groups_on_host }}"
+
+  #   - role: Ansible.Role.VM.UsersManagement
+  #     tags: [user]
+  #     vars:
+  #       users_on_host: "{{ system.users_on_host }}"
+  #       users:         "{{ all.users }}"
+
+  #   - role: Ansible.Role.VM.InstallPackages
+  #     tags: [packages,pip,install]
+  #     vars:
+  #       os_distribution:        "{{ system.os_distribution }}"
+  #       os_version:             "{{ system.os_version }}"
+  #       repository_keys:        "{{ system.packages.repository_keys           | default('[]') }}"
+  #       repositories:           "{{ system.packages.repositories              | default('[]') }}"
+  #       packages_to_install:    "{{ system.packages.packages_to_install       | default('[]') }}"
+  #       packages_to_remove:     "{{ system.packages.packages_to_remove        | default('[]') }}"
+  #       pip_packages:           "{{ system.pip_packages                       | default('[]') }}"
+  #       pip3_packages:          "{{ system.pip3_packages                      | default('[]') }}"
+
+  #   - role: Ansible.Role.VM.ConfigurationDocker
+  #     tags: [docker]
+  #     vars:
+  #       certificates: "{{ all.certificates }}"
