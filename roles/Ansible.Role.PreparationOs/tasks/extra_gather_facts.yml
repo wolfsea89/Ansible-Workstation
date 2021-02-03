@@ -1,12 +1,28 @@
 ---
 - name: Check is ssh is installed
-  shell: ssh -V
+  ignore_errors: yes
+  shell: command -v ssh -V 2>&1
   register: check_ssh_version
 
 - name: SSH version
   set_fact:
-    fact_ssh_version: "{{ check_ssh_version.stderr_lines }}"
+    fact_ssh_version: "{{ check_ssh_version.stdout }}"
+
+- name: Check is google chrome is installed
+  ignore_errors: yes
+  shell: "command -v google-chrome-stable -version"
+  register: check_chrome_version
+
+- name: Google Chrome version
+  set_fact:
+    fact_google_chrome_version: "{{ check_chrome_version.stdout }}"
+
+### PRINTING
 
 - name: SSH version
   debug:
-    msg: "{{ fact_ssh_version }}"
+    msg: "SSH Version: {{ fact_ssh_version }}"
+
+- name: Google Chrome version
+  debug:
+    msg: "Google Chrome Version: {{ fact_google_chrome_version }}"

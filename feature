@@ -1,10 +1,6 @@
-(/) Instalacja ssh
-(/) Konfiguracje ssh
-Instalacja google chrome
 Instalacja ansible
 Instalacja vscode
 Dodanie extenstion do vscode
-(/) Wyłączenie sudo pass
 skopiowanie kluczy ssh
 instalacja vbox
 Utworzenie stoarage w /opt/VM
