@@ -1,0 +1,9 @@
+---
+- name: Extra grather facts
+  include_tasks: extra_gather_facts.yml
+
+- name: Configure sudo
+  include_tasks: configure_sudo.yml
+
+- name: Configure ssh
+  include_tasks: configure_ssh.yml
