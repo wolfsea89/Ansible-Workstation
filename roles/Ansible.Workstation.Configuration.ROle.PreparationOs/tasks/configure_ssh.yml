@@ -3,7 +3,7 @@
   package:
     name: ssh
     state: present
-  when: fact_ssh_version is defined and fact_ssh_version == ""
+  when: fact_ssh is defined and fact_ssh == ""
 
 - name: "Block Password Authentication ssh"
   lineinfile:
