@@ -13,15 +13,15 @@
 
 - name: Install Google chrome
   include_tasks: install_google_chrome.yml
-  when: fact_google_chrome_version is defined and fact_google_chrome_version == ""
+  when: fact_google_chrome is defined and fact_google_chrome == ""
 
 - name: Instll Visual Studio Code
   include_tasks: install_vscode.yml
-  when: fact_vscode_version is defined and fact_vscode_version == ""
+  when: fact_vscode is defined and fact_vscode == ""
 
 - name: Install Ansible
   include_tasks: install_ansible.yml
-  when: fact_ansible_version is defined and fact_ansible_version == ""
+  when: fact_ansible is defined and fact_ansible == ""
   
 - name: Install virtualbox
   include_tasks: install_virutalbox.yml
@@ -32,3 +32,17 @@
 
 - name: Install docker
   include_tasks: install_docker.yml
+
+- name: Update all packages to their latest version
+  apt:
+    name: "*"
+    state: latest
+  notify: Restart system
+
+- name: Remove useless packages from the cache
+  apt:
+    autoclean: yes
+
+- name: Remove dependencies that are no longer required
+  apt:
+    autoremove: yes

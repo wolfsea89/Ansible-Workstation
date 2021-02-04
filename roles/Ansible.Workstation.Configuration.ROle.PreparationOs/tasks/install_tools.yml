@@ -1,3 +1,9 @@
+---
+- name: update and upgrade
+  apt:
+    upgrade: dist
+    update_cache: yes
+
 - name: Install tools
   apt:
     pkg:
