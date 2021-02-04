@@ -8,6 +8,27 @@
 - name: Configure ssh
   include_tasks: configure_ssh.yml
 
+- name: Install tools
+  include_tasks: install_tools.yml
+
 - name: Install Google chrome
   include_tasks: install_google_chrome.yml
   when: fact_google_chrome_version is defined and fact_google_chrome_version == ""
+
+- name: Instll Visual Studio Code
+  include_tasks: install_vscode.yml
+  when: fact_vscode_version is defined and fact_vscode_version == ""
+
+- name: Install Ansible
+  include_tasks: install_ansible.yml
+  when: fact_ansible_version is defined and fact_ansible_version == ""
+  
+- name: Install virtualbox
+  include_tasks: install_virutalbox.yml
+
+- name: Install enpass
+  include_tasks: install_enpass.yml
+  when: fact_enppas_instlled
+
+- name: Install docker
+  include_tasks: install_docker.yml
