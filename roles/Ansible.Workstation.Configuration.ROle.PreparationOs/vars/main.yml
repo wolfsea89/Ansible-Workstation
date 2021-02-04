@@ -1,0 +1,4 @@
+---
+vars_sudo_config_path: /etc/sudoers
+vars_sshd_config_path: /etc/ssh/sshd_config
+

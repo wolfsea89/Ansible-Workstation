@@ -1,0 +1,9 @@
+---
+- name: Preparation of OS
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles: 
+    - role: Ansible.Workstation.Configuration.ROle.PreparationOs
+    - role: Ansible.Workstation.Configuration.Role.ConfigureProfile
