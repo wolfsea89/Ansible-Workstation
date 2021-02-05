@@ -1,2 +1,6 @@
 ---
+<<<<<<< HEAD
 input_users: ""
+=======
+# defaults file for Ansible.Workstation.Configuration.Role.ConfigureProfile
+>>>>>>> develop

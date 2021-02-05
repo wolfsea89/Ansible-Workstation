@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> develop
 Dodanie extenstion do vscode
 skopiowanie kluczy ssh
 Utworzenie stoarage w /opt/VM

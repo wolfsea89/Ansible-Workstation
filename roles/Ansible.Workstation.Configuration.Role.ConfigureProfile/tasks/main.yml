@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 - name: Select user "{{ input_role_user_atrr.key }}"
   set_fact:
     username: "{{ input_role_user_atrr.key }}"
@@ -21,3 +22,5 @@
 # - name: Copy ssh keys
 #   become: yes
 #   become_user: "{{ username }}"
+=======
+>>>>>>> develop
