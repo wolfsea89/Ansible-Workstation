@@ -1,1 +1,23 @@
 ---
+- name: Select user "{{ input_role_user_atrr.key }}"
+  set_fact:
+    username: "{{ input_role_user_atrr.key }}"
+
+- name: Configure userprofile
+  become: yes
+  become_user: "{{ username }}"
+  include: configure_userprofile.yml
+
+- name: Configure Git
+  become: yes
+  become_user: "{{ username }}"
+  include: configure_gitconfig.yml
+
+- name: Configure visual studio Code
+  become: yes
+  become_user: "{{ username }}"
+  include: configure_vscode.yml
+
+# - name: Copy ssh keys
+#   become: yes
+#   become_user: "{{ username }}"

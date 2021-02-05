@@ -1,4 +1,0 @@
-all:
-  hosts:
-    localhost:
-    10.1.0.8:

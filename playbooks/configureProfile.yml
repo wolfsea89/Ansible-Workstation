@@ -5,9 +5,7 @@
   gather_facts: yes
 
   tasks:
-    - include_role: 
-        name: Ansible.Workstation.Configuration.Role.PreparationOs
-
+  
     - include_role: 
         name: Ansible.Workstation.Configuration.Role.ConfigureProfile
       vars:
