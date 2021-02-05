@@ -1,0 +1,6 @@
+---
+- name: Install Visual Studio Code extenssions
+  changed_when: "'already installed' not in status_install_vscode_extension.stdout"
+  shell: "code --install-extension {{ item }}"
+  register: status_install_vscode_extension
+  loop: "{{ input_role_vscode_extensions }}" 
