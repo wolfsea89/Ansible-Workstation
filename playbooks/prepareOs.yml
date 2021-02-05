@@ -5,5 +5,5 @@
   gather_facts: yes
 
   roles: 
-    - role: Ansible.Workstation.Configuration.ROle.PreparationOs
+    - role: Ansible.Workstation.Configuration.Role.PreparationOs
     - role: Ansible.Workstation.Configuration.Role.ConfigureProfile
