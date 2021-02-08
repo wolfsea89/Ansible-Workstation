@@ -2,6 +2,7 @@
 - name: Select user "{{ input_role_user_atrr.key }}"
   set_fact:
     username: "{{ input_role_user_atrr.key }}"
+    userattr: "{{ input_role_user_atrr.value }}"
 
 - name: Configure userprofile
   become: yes
@@ -18,6 +19,8 @@
   become_user: "{{ username }}"
   include: configure_vscode.yml
 
-# - name: Copy ssh keys
+# - name: Copy ssh key
 #   become: yes
 #   become_user: "{{ username }}"
+#   include: copy_ssh_key.yml
+

@@ -39,9 +39,16 @@
   ignore_errors: yes
   shell: "command -v docker --version"
   register: check_docker
+
+- name: Check is helm installed
+  changed_when: false
+  ignore_errors: yes
+  shell: "command -v helm --version"
+  register: check_helm
+
 ### set_facts
 
-- name: Enpass
+- name: Set Fact
   set_fact:
     fact_ssh: "{{ check_ssh.stdout }}"
     fact_google_chrome: "{{ check_chrome.stdout }}"
@@ -50,3 +57,4 @@
     fact_vbox: "{{ check_vbox.stdout }}"
     fact_enppas_instlled: "{{ check_enpass.stat.exists }}"
     fact_docker: "{{ check_docker.stdout }}"
+    fact_helm: "{{ check_helm.stdout }}"

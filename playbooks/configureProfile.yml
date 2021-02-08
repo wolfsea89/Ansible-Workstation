@@ -1,11 +1,10 @@
 ---
 - name: Preparation of OS
-  hosts: all
+  hosts: workstasion
   become: yes
   gather_facts: yes
 
   tasks:
-  
     - include_role: 
         name: Ansible.Workstation.Configuration.Role.ConfigureProfile
       vars:

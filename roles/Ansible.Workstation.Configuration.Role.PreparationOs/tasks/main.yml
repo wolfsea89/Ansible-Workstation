@@ -22,7 +22,7 @@
 - name: Install Ansible
   include_tasks: install_ansible.yml
   when: fact_ansible is defined and fact_ansible == ""
-  
+
 - name: Install virtualbox
   include_tasks: install_virutalbox.yml
 
@@ -32,6 +32,10 @@
 
 - name: Install docker
   include_tasks: install_docker.yml
+
+- name: Install helm
+  include_tasks: install_helm.yml
+  when: fact_helm is defined and fact_helm == ""
 
 - name: Update all packages to their latest version
   apt:
