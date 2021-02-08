@@ -1,6 +1,6 @@
 ---
 - name: Preparation of OS
-  hosts: all
+  hosts: workstasion
   become: yes
   gather_facts: yes
 
