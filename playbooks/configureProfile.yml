@@ -6,7 +6,7 @@
 
   tasks:
     - include_role: 
-        name: Ansible.Workstation.Configuration.Role.ConfigureProfile
+        name: Workstation-ConfigureProfile
       vars:
         input_role_vscode_extensions: "{{ inventory_group_all_user_profile.vscode.extenssions }}"
       loop_control:
