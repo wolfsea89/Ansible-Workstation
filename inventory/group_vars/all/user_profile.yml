@@ -1,9 +1,0 @@
-inventory_group_all_user_profile:
-  vscode:
-    extenssions:
-      - alefragnani.project-manager
-      - CoenraadS.bracket-pair-colorizer-2
-      - haaaad.ansible
-      - timonwong.ansible-autocomplete
-      - redhat.vscode-yaml
-      - ms-kubernetes-tools.vscode-kubernetes-tools

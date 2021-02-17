@@ -7,3 +7,4 @@ inventory_group_all_user_profile:
       - timonwong.ansible-autocomplete
       - ms-kubernetes-tools.vscode-kubernetes-tools
       - wholroyd.jinja
+      - donjayamanne.githistory
