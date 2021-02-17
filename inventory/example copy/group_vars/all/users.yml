@@ -1,9 +1,0 @@
-inventory_group_all_users:
-  mrachuna:
-    git:
-      name: "Maciej Rachuna"
-      email: rachuna.maciej@gmail.com
-    ssh:
-      private_key: ""
-      public_key: ""
-  none:

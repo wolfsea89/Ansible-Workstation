@@ -1,0 +1,4 @@
+[submodule "inventory/example"]
+	path = inventory/example
+	url = git@github.com:wolfsea89/Ansible-Inventory-Example.git
+	branch = develop
