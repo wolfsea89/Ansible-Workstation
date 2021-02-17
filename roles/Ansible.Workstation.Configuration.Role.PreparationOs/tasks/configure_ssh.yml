@@ -1,6 +1,6 @@
 ---
 - name: Install ssh
-  package:
+  apt:
     name: ssh
     state: present
   when: fact_ssh is defined and fact_ssh == ""

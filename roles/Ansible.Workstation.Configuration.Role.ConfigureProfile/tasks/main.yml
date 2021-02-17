@@ -19,8 +19,8 @@
   become_user: "{{ username }}"
   include: configure_vscode.yml
 
-# - name: Copy ssh key
-#   become: yes
-#   become_user: "{{ username }}"
-#   include: copy_ssh_key.yml
+- name: Copy ssh key
+  become: yes
+  become_user: "{{ username }}"
+  include: copy_ssh_key.yml
 
