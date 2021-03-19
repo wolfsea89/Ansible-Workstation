@@ -1,13 +1,15 @@
 ---
 - name: Preparation of OS
-  hosts: workstasion
+  hosts: workstastions
   become: yes
   gather_facts: yes
 
   tasks:
     - include_role: 
         name: Workstation-PreparationOs
-
+      vars:
+        input_role_enable_set_hostname: true
+        
     - include_role: 
         name: Workstation-ConfigureProfile
       vars:
