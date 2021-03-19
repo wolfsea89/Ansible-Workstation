@@ -17,6 +17,7 @@
     - findutils
     - pinta
     - python-setuptools
+    - libnss3-tools
 
 - name: Install pip3
   pip:

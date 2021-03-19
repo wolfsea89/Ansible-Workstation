@@ -1,2 +1,2 @@
 ---
-# vars file for Ansible.Workstation.Configuration.Role.ConfigureProfile
+vars_ca_crt_name: ca.crt

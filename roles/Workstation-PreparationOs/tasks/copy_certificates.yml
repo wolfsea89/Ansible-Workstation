@@ -1,0 +1,10 @@
+- name: Copy CA certificate
+  copy:
+    content: "{{ input_role_ca_certficate }}"
+    dest: "/usr/share/ca-certificates/{{ vars_ca_crt_name }}"
+    mode: 0644
+  register: copy_ca_status
+
+- name: Update CA
+  changed_when: "{{ copy_ca_status.changed }}"
+  command: update-ca-certificates

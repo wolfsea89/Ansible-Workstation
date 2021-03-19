@@ -8,6 +8,9 @@
 - name: Configure ssh
   include_tasks: configure_ssh.yml
 
+- name: Copy CA Certificates
+  include_tasks: copy_certificates.yml
+
 - name: Install tools
   include_tasks: install_tools.yml
 

@@ -9,6 +9,7 @@
         name: Workstation-PreparationOs
       vars:
         input_role_enable_set_hostname: true
+        input_role_ca_certficate:     "{{ inventory_group_all_certificates.ca_crt }}"
         
     - include_role: 
         name: Workstation-ConfigureProfile

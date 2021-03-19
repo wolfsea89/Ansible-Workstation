@@ -29,3 +29,7 @@
   become_user: "{{ username }}"
   include: copy_bashrc.yml
 
+- name: Add CA certificate
+  become: yes
+  become_user: "{{ username }}"
+  include: add_ca_cert.yml
