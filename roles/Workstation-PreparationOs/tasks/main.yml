@@ -37,19 +37,8 @@
   include_tasks: install_helm.yml
   when: fact_helm is defined and fact_helm == ""
 
-- name: Update all packages to their latest version
-  apt:
-    name: "*"
-    state: latest
-  notify: Restart system
-
-- name: Remove useless packages from the cache
-  apt:
-    autoclean: yes
-
-- name: Remove dependencies that are no longer required
-  apt:
-    autoremove: yes
+- name: Update and Upgrade 
+  include_tasks: install_upgrade.yml
 
 - name: Set hostname
   include: set_hostname.yml
