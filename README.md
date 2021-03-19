@@ -85,5 +85,7 @@ invnetory_host_users:
 ```
 Playbooki
 =========
+
 prepareOs.yml        - przygotowanie systemu oraz konfiguracja profilu użytkownika
+
 configureProfile.yml - konfiguracja profilu uzytkowników
