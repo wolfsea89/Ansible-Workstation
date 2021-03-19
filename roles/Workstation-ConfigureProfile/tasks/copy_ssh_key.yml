@@ -1,3 +1,9 @@
+- name: Create .ssh directory
+  become_user: "{{ username }}"
+  file:
+    path: ~/.ssh
+    state: directory
+
 - name: Copy private ssh key
   become_user: "{{ username }}"
   copy:
