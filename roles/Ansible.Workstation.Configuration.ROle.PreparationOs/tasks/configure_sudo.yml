@@ -1,7 +1,0 @@
----
-- name: "[Ubuntu] Set NOPASSWD in sudo group"
-  lineinfile:
-    dest: "{{ vars_sudo_config_path }}" 
-    regexp: '^#?%sudo'
-    line: "%sudo	ALL=(ALL:ALL) NOPASSWD:ALL"
-    state: present

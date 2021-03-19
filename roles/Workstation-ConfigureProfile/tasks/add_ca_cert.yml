@@ -10,7 +10,7 @@
     path: ~/.pki/nssdb
     state: directory
     recurse: yes
-  when: not nssdb_status.exists
+  when: not nssdb_status.stat.exists
 
 - name: Copy ~/.pki/nssdb database
   become_user: "{{ username }}"
@@ -20,7 +20,7 @@
     owner: "{{ username }}"
     group: "{{ username }}"
     mode: 0600
-  when: not nssdb_status.exists
+  when: not nssdb_status.stat.exists
 
 - name: Add CA certificate
   become_user: "{{ username }}"
