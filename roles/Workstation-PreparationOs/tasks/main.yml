@@ -50,3 +50,7 @@
 - name: Remove dependencies that are no longer required
   apt:
     autoremove: yes
+
+- name: Set hostname
+  include: set_hostname.yml
+  when: input_role_enable_set_hostname

@@ -3,3 +3,4 @@ input_role_ssh_PasswordAuthentication: "no"
 input_role_ssh_Port: 22
 input_role_ssh_PermitRootLogin: "no"
 input_role_virtualbox_storage_path: /opt/VM
+input_role_enable_set_hostname: false
