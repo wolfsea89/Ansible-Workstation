@@ -16,3 +16,11 @@
     - python3-pip
     - findutils
     - pinta
+    - python-setuptools
+
+- name: Install pip3
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+  with_items:
+    - paramiko
