@@ -89,3 +89,21 @@ Playbooki
 prepareOs.yml        - przygotowanie systemu oraz konfiguracja profilu użytkownika
 
 configureProfile.yml - konfiguracja profilu uzytkowników
+
+Testing
+=========
+
+Testing on:
+  - `Ubuntu 20.04 LTS` 
+
+License
+=========
+
+BSD
+
+Author Information
+=========
+
+ **Maciej Rachuna**
+##### System Administrator
+rachuna.maciej@gmail.com
