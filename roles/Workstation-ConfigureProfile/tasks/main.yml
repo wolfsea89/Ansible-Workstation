@@ -24,3 +24,8 @@
   become_user: "{{ username }}"
   include: copy_ssh_key.yml
 
+- name: Copy .bashrc
+  become: yes
+  become_user: "{{ username }}"
+  include: copy_bashrc.yml
+
