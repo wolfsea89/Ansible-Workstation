@@ -1,0 +1,48 @@
+---
+- name: Extra grather facts
+  include_tasks: extra_gather_facts.yml
+
+- name: Configure sudo
+  include_tasks: configure_sudo.yml
+
+- name: Configure ssh
+  include_tasks: configure_ssh.yml
+
+- name: Copy CA Certificates
+  include_tasks: copy_certificates.yml
+
+- name: Install tools
+  include_tasks: install_tools.yml
+
+- name: Install Google chrome
+  include_tasks: install_google_chrome.yml
+  when: fact_google_chrome is defined and fact_google_chrome == ""
+
+- name: Instll Visual Studio Code
+  include_tasks: install_vscode.yml
+  when: fact_vscode is defined and fact_vscode == ""
+
+- name: Install Ansible
+  include_tasks: install_ansible.yml
+  when: fact_ansible is defined and fact_ansible == ""
+
+- name: Install virtualbox
+  include_tasks: install_virutalbox.yml
+
+- name: Install enpass
+  include_tasks: install_enpass.yml
+  when: fact_enppas_instlled
+
+- name: Install docker
+  include_tasks: install_docker.yml
+
+- name: Install helm
+  include_tasks: install_helm.yml
+  when: fact_helm is defined and fact_helm == ""
+
+- name: Update and Upgrade 
+  include_tasks: install_upgrade.yml
+
+- name: Set hostname
+  include: set_hostname.yml
+  when: input_role_enable_set_hostname

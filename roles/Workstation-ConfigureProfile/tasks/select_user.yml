@@ -1,0 +1,33 @@
+---
+- name: Select user "{{ select_user.key }}"
+  set_fact:
+    username: "{{ select_user.key }}"
+    userattr: "{{ select_user.value }}"
+
+- name: Create User
+  include: create_user.yml
+
+- name: Configure userprofile
+  include: configure_userprofile.yml
+  when: userattr.state == "present"
+
+- name: Configure Git
+  include: configure_gitconfig.yml
+  when: userattr.state == "present"
+
+- name: Copy ssh key
+  become: false
+  include: copy_ssh_key.yml
+  when: userattr.state == "present"
+
+- name: Add CA certificate
+  become: yes
+  become_user: "{{ username }}"
+  include: add_ca_cert.yml
+  when: userattr.state == "present"
+
+- name: Configure visual studio Code
+  become: yes
+  become_user: "{{ username }}"
+  include: configure_vscode.yml
+  when: userattr.state == "present"

@@ -1,0 +1,8 @@
+- name: Copy .bashrc
+  become_user: "{{ username }}"
+  copy:
+    src: .bashrc
+    dest: ~/.bashrc
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 0600

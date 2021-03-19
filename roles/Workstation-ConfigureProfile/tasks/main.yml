@@ -1,0 +1,9 @@
+---
+- name: "Select user {{ input_role_user_on_host.name }}"
+  include: select_user.yml
+  loop: "{{ lookup('dict', input_role_all_users) }}"
+  loop_control:
+    loop_var: select_user   
+  when: 
+    - select_user.key != "none"
+    - input_role_user_on_host.name == select_user.key

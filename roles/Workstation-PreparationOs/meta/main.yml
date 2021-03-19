@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Maciej Rachuna
+  description: Prepared workstasion
+  company: ""
+  license: BSD-3-Clause 
+  min_ansible_version: 2.9
+  galaxy_tags: 
+    - install packages
+    - install google chrome
+    - install ansible
+    - install virtualbox
+    - install enpass
+    - install vscode
+    - configure sudo
+    - configure ssh
+dependencies: []

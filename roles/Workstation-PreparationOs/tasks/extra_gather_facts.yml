@@ -1,0 +1,60 @@
+---
+- name: Check is ssh installed
+  ignore_errors: yes
+  changed_when: false
+  shell: command -v ssh -V 2>&1
+  register: check_ssh
+
+- name: Check is google chrome installed
+  ignore_errors: yes
+  changed_when: false
+  shell: "command -v google-chrome-stable -version"
+  register: check_chrome
+
+- name: Chech is visual studio code installed
+  ignore_errors: yes
+  changed_when: false
+  shell: "command -v code --version"
+  register: check_vscode
+
+- name: Check is ansible installed
+  changed_when: false
+  ignore_errors: yes
+  shell: "command -v ansible --version"
+  register: check_ansible
+
+- name: Check is virtualbox installed
+  changed_when: false
+  ignore_errors: yes
+  shell: "command -v VBoxManage --version"
+  register: check_vbox
+
+- name: Check is enpass installed
+  stat:
+    path: /opt/enpass/Enpasss
+  register: check_enpass
+
+- name: Check is docker installed
+  changed_when: false
+  ignore_errors: yes
+  shell: "command -v docker --version"
+  register: check_docker
+
+- name: Check is helm installed
+  changed_when: false
+  ignore_errors: yes
+  shell: "command -v helm --version"
+  register: check_helm
+
+### set_facts
+
+- name: Set Fact
+  set_fact:
+    fact_ssh: "{{ check_ssh.stdout }}"
+    fact_google_chrome: "{{ check_chrome.stdout }}"
+    fact_vscode: "{{ check_vscode.stdout }}"
+    fact_ansible: "{{ check_ansible.stdout }}"
+    fact_vbox: "{{ check_vbox.stdout }}"
+    fact_enppas_instlled: "{{ check_enpass.stat.exists }}"
+    fact_docker: "{{ check_docker.stdout }}"
+    fact_helm: "{{ check_helm.stdout }}"

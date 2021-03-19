@@ -1,0 +1,23 @@
+- name: Create .ssh directory
+  become_user: "{{ username }}"
+  file:
+    path: ~/.ssh
+    state: directory
+
+- name: Copy private ssh key
+  become_user: "{{ username }}"
+  copy:
+    content: "{{ userattr.ssh.private_key }}"
+    dest: ~/.ssh/id_rsa
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 0600
+
+- name: Copy public ssh key
+  become_user: "{{ username }}"
+  copy:
+    content: "{{ userattr.ssh.public_key }}"
+    dest: ~/.ssh/id_rsa.pub
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 0644
