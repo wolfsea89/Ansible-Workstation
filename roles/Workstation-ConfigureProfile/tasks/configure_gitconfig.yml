@@ -1,4 +1,5 @@
 - name: Configuration git
+  become_user: "{{ username }}"
   template:
     src: .gitconfig.j2
     dest: ~/.gitconfig

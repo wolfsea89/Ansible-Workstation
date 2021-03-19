@@ -1,7 +1,0 @@
-- name: Copy .bashrc
-  copy:
-    src: .bashrc
-    dest: ~/
-    owner: "{{ username }}"
-    group: "{{ username }}"
-    mode: '0600'

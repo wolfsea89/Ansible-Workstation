@@ -1,35 +1,9 @@
 ---
-- name: Select user "{{ input_role_user_atrr.key }}"
-  set_fact:
-    username: "{{ input_role_user_atrr.key }}"
-    userattr: "{{ input_role_user_atrr.value }}"
-
-- name: Configure userprofile
-  become: yes
-  become_user: "{{ username }}"
-  include: configure_userprofile.yml
-
-- name: Configure Git
-  become: yes
-  become_user: "{{ username }}"
-  include: configure_gitconfig.yml
-
-- name: Configure visual studio Code
-  become: yes
-  become_user: "{{ username }}"
-  include: configure_vscode.yml
-
-- name: Copy ssh key
-  become: yes
-  become_user: "{{ username }}"
-  include: copy_ssh_key.yml
-
-- name: Copy .bashrc
-  become: yes
-  become_user: "{{ username }}"
-  include: copy_bashrc.yml
-
-- name: Add CA certificate
-  become: yes
-  become_user: "{{ username }}"
-  include: add_ca_cert.yml
+- name: "Select user {{ input_role_user_on_host.name }}"
+  include: select_user.yml
+  loop: "{{ lookup('dict', input_role_all_users) }}"
+  loop_control:
+    loop_var: select_user   
+  when: 
+    - select_user.key != "none"
+    - input_role_user_on_host.name == select_user.key

@@ -1,4 +1,5 @@
 - name: Copy .bashrc
+  become_user: "{{ username }}"
   copy:
     src: .bashrc
     dest: ~/.bashrc
