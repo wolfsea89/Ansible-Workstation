@@ -1,6 +1,4 @@
 ---
-- debug:
-    msg: "{{ inventory_group_all_users }}"
 - name: Select user "{{ input_role_user_atrr.key }}"
   set_fact:
     username: "{{ input_role_user_atrr.key }}"
