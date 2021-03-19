@@ -1,3 +1,27 @@
+- name: Check is ~/.pki/nssdb exist
+  become_user: "{{ username }}"
+  stat:
+    path: ~/.pki/nssdb
+  register: nssdb_status
+
+- name: Create .pki
+  become_user: "{{ username }}"
+  file:
+    path: ~/.pki/nssdb
+    state: directory
+    recurse: yes
+  when: not nssdb_status.exists
+
+- name: Copy ~/.pki/nssdb database
+  become_user: "{{ username }}"
+  copy:
+    src: nssdb
+    dest: ~/.pki/nssdb
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 0600
+  when: not nssdb_status.exists
+
 - name: Add CA certificate
   become_user: "{{ username }}"
   command: certutil -d sql:$HOME/.pki/nssdb -A -t TC -n "ca.crt" -i "/usr/share/ca-certificates/{{ vars_ca_crt_name }}"

@@ -8,7 +8,7 @@
     - include_role: 
         name: Workstation-ConfigureProfile
       vars:
-        input_role_vscode_extensions: "{{ inventory_group_all_user_profile.vscode.extenssions }}"
+        input_role_vscode_extensions: "{{ inventory_group_workstastions_user_profile.vscode.extenssions }}"
         input_role_all_users:         "{{ inventory_group_all_users }}"
       loop_control:
         loop_var: input_role_user_on_host
