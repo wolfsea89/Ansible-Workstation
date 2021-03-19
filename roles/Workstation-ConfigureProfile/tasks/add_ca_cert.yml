@@ -1,2 +1,3 @@
 - name: Add CA certificate
+  become_user: "{{ username }}"
   command: certutil -d sql:$HOME/.pki/nssdb -A -t TC -n "ca.crt" -i "/usr/share/ca-certificates/{{ vars_ca_crt_name }}"

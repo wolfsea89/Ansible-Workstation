@@ -1,0 +1,14 @@
+- name: "Create User {{ username }}"
+  user:
+    name: "{{ username }}"
+    state: present
+    shell: "/bin/bash"
+    groups: "{{ input_role_user_on_host.groups }}"
+    comment: "{{ userattr.gecos }}"
+  when: userattr.state == "present"
+
+- name: "Delete User '{{ username }}'"
+  user:
+    name: "{{ username }}"
+    state: absent
+  when: userattr.state == "absent"
