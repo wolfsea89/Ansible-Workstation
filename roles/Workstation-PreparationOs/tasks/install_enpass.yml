@@ -6,7 +6,7 @@
 
 - name: Add repository enpass
   apt_repository:
-    repo: deb https://apt.enpass.io/ stable main
+    repo: "deb https://apt.enpass.io/ stable main"
     state: present
     filename: enpass
   
