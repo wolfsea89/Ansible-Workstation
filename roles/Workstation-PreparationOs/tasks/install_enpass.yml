@@ -1,15 +1,16 @@
 ---
-- name: Add an Apt signing key to enpass
-  apt_key:
-    url: https://apt.enpass.io/keys/enpass-linux.key
-    state: present
-
 - name: Add repository enpass
   apt_repository:
     repo: deb https://apt.enpass.io/ stable main
     state: present
     filename: enpass
-  
+    update_cache: false
+
+- name: Add an Apt signing key to enpass
+  apt_key:
+    url: https://apt.enpass.io/keys/enpass-linux.key
+    state: present
+
 - name: Update the repository cache and install enpass
   apt:
     name: enpass

@@ -31,7 +31,7 @@
 
 - name: Install enpass
   include_tasks: install_enpass.yml
-  when: fact_enppas_instlled
+  when: not fact_enppas_instlled
 
 - name: Install docker
   include_tasks: install_docker.yml

@@ -18,6 +18,7 @@
     - pinta
     - python-setuptools
     - libnss3-tools
+    - sshpass
 
 - name: Install pip3
   pip:
